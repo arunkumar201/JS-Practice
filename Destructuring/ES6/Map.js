@@ -9,47 +9,54 @@ let obj = { name: "Arun", age: 123 };
 console.log(obj instanceof Map);
 console.log(obj instanceof Object);
 
-//Create a Map 
+//Create a Map
 
-let user=new Map(); //Empty Map
- user.set('name','Arun');
- user.set('Age 🥭',20);
-console.log(user)
+let user = new Map(); //Empty Map
+user.set("name", "Arun");
+user.set("Age 🥭", 20);
+console.log(user);
 
-// creating a map 
+// creating a map
 var fruits = new Map();
-fruits.set('🍎', "Apple");
-fruits.set('🍋', "Mango");
+fruits.set("🍎", "Apple");
+fruits.set("🍋", "Mango");
 fruits; //{"🍎" => "Apple", "🍋" => "Mango"}
 //total number of entries in the Map
-console.log(fruits.size)
+console.log(fruits.size);
 
+let books = new Map();
+books.set("John", "author");
+books.set("Harry", "publisher");
+books.set("Mary", "subscriber");
+books.set("James", "Distributor");
 
-let books = new Map();  
-    books.set('John', 'author');  
-    books.set('Harry', 'publisher');  
-    books.set('Mary', 'subscriber');  
-    books.set('James', 'Distributor');  
-    
-    console.log(books.get("James"))
-    books.set("James","CEO Of A Company");
-    console.log(books.get("James"));
-    console.log(books.size)
-    console.log(books.delete("John"));
-    console.log(books);
-    
-books.set("Arun",'Developer');
-console.log(books.get("Arun"))
+console.log(books.get("James"));
+books.set("James", "CEO Of A Company");
+console.log(books.get("James"));
+console.log(books.size);
+console.log(books.delete("John"));
+console.log(books);
+
+books.set("Arun", "Developer");
+console.log(books.get("Arun"));
 console.log(books.has("Arun"));
 
+for (let i of books.values()) {
+  console.log(i);
+}
+for (let i of books.entries()) {
+  console.log(`key:${i[0]}:Value:${i[1]} \n`);
+}
 
-for(let i of books.values()){
-   console.log(i);
-}
-for(let i of books.entries()){
-console.log(`
-             key:${i[0]}
-             Value:${i[1]}
-             `
-             );
-}
+const UserRoles=new Map([
+  ['Arun','CEO'],
+  ['Ramu','Administrator'],
+  ['Vikash','Director'],
+]);
+console.log(UserRoles);
+console.log(UserRoles.get('Arun'));
+console.log(UserRoles.get("Ramu"));
+console.log(UserRoles.get("jasihf"));
+
+
+

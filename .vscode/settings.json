@@ -1,5 +1,5 @@
 {
-  "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "aiXcoder.showTrayIcon": true,
-  "cSpell.words": ["Arun", "Kumar"]
+	"editor.suggest.snippetsPreventQuickSuggestions": false,
+	"aiXcoder.showTrayIcon": true,
+	"cSpell.words": ["Arun", "Kumar", "Todos"]
 }
