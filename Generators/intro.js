@@ -52,3 +52,5 @@ let generator = gen1();
 let question = generator.next().value; // <-- yield returns the value
 
 generator.next(422); // --> pass the result into the generator
+
+
