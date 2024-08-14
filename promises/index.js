@@ -28,21 +28,44 @@ event loop will start picking the jobs from the macro task queue
  * ]
  */
 
-new Promise((res) => {
-	console.log(8);
-	return res(8); //here the resolve callback is get executed right away and then call push in the macro queue
-}).then((val) => console.log(val + 1));
+// new Promise((res) => {
+// 	console.log(8);
+// 	return res(8); //here the resolve callback is get executed right away and then call push in the macro queue
+// }).then((val) => console.log(val + 1));
 
-console.log(1);
-setTimeout(() => console.log(2));
+// console.log(1);
+// setTimeout(() => console.log(2));
 
-Promise.resolve().then(() => console.log(3));
-Promise.resolve().then(() => setTimeout(() => console.log(4)));
+// Promise.resolve().then(() => console.log(3));
+// Promise.resolve().then(() => setTimeout(() => console.log(4)));
 
-Promise.resolve().then(() => console.log(5));
+// Promise.resolve().then(() => console.log(5));
 
-setTimeout(() => console.log(6));
-console.log(7);
+// setTimeout(() => console.log(6));
+// console.log(7);
 
 //Output - 1 7 3 5 2 6 4
 //Output - 8 1 7 9 3 5 2 6 4
+
+//Promise.resolve().then(() => console.log(3)); - this line will be executed after
+const isMomHappy = false;
+
+const willMomBuyTea = new Promise((resolve, reject) => {
+	if (isMomHappy) {
+		resolve("Mom is happy, buying tea"); //this will get executed right away and then call push in the micro task queue or Promise get fulfilled
+	} else {
+		reject("Mom is not happy, not buying tea"); //this will get executed right away and then call push in the micro task queue or Promise get rejected
+	}
+});
+willMomBuyTea
+	.then((res) => {
+		console.log(res);
+	})
+	.catch((err) => {
+		console.log(err); 
+	});
+
+// promise syntax look like this
+// new Promise(function (resolve, reject) { ... } );
+
+
