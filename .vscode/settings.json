@@ -1,7 +1,7 @@
 {
 	"editor.suggest.snippetsPreventQuickSuggestions": false,
 	"aiXcoder.showTrayIcon": true,
-	"cSpell.words": ["Arun", "Kumar", "Suraj", "Todos"],
+	"cSpell.words": ["Arun", "Kumar", "libuv", "Suraj", "Todos"],
 	"github.copilot.preferredAccount": "https://github.com/gfx-tech",
 	"github.copilot.chat.scopeSelection": true
 }
