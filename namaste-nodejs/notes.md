@@ -44,12 +44,50 @@ module.exports={getUser}
 const {getUser}=require("./getUser");
 
 ## ES Modules system (also known as ESM or MJS or ES6 Module system)
-- it uses imports and exports syntax 
-- it loads the module in async manner 
+
+- it uses imports and exports syntax
+- it loads the module in async manner
 - it is non-blocking and newer way and it is supported by nodejs since version 14.
 - it runs the code in strict mode by default.
--it is newer way
+  -it is newer way
 
 eg.
 import {getUser} from "./getUser.js";
 export function getUser(id){}
+
+## Nodejs Modules
+
+- nodejs has its own module system which is based on CommonJs.
+- All the code of the module is wrapped inside a function (IIFE)
+- it is synchronous and blocking.
+
+- All code of the module runs inside an IIFE
+
+  - it is wrapped inside a function and it is executed immediately.
+    eg.
+
+    ```js
+    (function () {
+    	//here module code comes inside it when the code actual go for the execution (V8).
+    })();
+    ```
+
+- How are variable and functions are private in different module?
+- ans: because each module in Node.js is wrapped in its own function scope, making variables and functions private to that module (IIFE and require) .
+
+- How do we get the access to module.exports in nodejs ?
+- ans : nodejs passes the module as a parameter to the IIFE
+
+````js
+    (function (module,require){
+
+    })()
+````
+- require("/path") - lib/internal/module/cjs (implementation available on nodejs github)
+    - resolving the module 
+       - .json,package module,or localPath 
+    - loading the file content or loading module
+    - wraps inside the  IIFE. (compile step)
+    - evaluation
+    - caching (require will cache automatically)
+
