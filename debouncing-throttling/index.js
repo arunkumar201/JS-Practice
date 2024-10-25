@@ -112,3 +112,58 @@ export const useThrottle = (func, delay) => {
 
 
 */
+
+
+/*
+
+import { useState, useEffect, useRef } from 'react';
+
+function useThrottle<T>(value: T, delay: number): T {
+  const [throttledValue, setThrottledValue] = useState<T>(value);
+  const lastExecuted = useRef<number>(Date.now());
+
+  useEffect(() => {
+	const handler = setTimeout(() => {
+	  const now = Date.now();
+	  if (now - lastExecuted.current >= delay) {
+		setThrottledValue(value);
+		lastExecuted.current = now;
+	  }
+	}, delay);
+
+	return () => {
+	  clearTimeout(handler);
+	};
+  }, [value, delay]);
+
+  return throttledValue;
+}
+
+export default useThrottle;
+
+
+
+// Custom hook for debouncing text input
+import React, { useState, useEffect } from "react";
+
+const useDebounce = (text, delay) => {
+  // State to store the debounced text
+  const [debouncedText, setDebouncedText] = useState(text);
+
+  useEffect(() => {
+	// Create a timer that will execute the callback after the specified delay
+	const debounceTimer = setTimeout(() => {
+	  setDebouncedText(text); // Update the debounced text with the latest input
+	}, delay);
+
+	// Cleanup function: Clear the timer if the component unmounts or the input changes
+	return () => {
+	  clearTimeout(debounceTimer);
+	};
+  }, [text, delay]);
+
+  return debouncedText; // Return the debounced text
+};
+
+export default useDebounce;
+*/

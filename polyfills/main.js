@@ -86,7 +86,7 @@ nums.myForEach((num, index, arr) => {
 
 
 //Pollyfill for Reduce
-
+// reduce is used to apply a function against an accumulator and each element in the array (from left to right) to reduce it to a single output value.
 const arr=[1, 2, 3, 4, 5, 6, 7];
 let sum=arr.reduce((accumulator, currentValue, currentIndex, a) => {
 	console.log(`reduce accumulator: ${accumulator}, currentValue: ${currentValue}, currentIndex: ${currentIndex}, array: ${a}`);
@@ -186,6 +186,3 @@ Function.prototype.myBind=function (context, ...args) {
 };
 const boundDisplayUserDetails_myBind=displayUserDetails.myBind(house_1, 12000000);
 boundDisplayUserDetails_myBind("$");
-
-
-
