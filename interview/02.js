@@ -15,4 +15,4 @@ console.log("Value of Property" + value); //getting error can't access property 
 
 let value = "1cr";
 
-console.log("Value of Property" + value);
+console.log("Value of Property"+value);
